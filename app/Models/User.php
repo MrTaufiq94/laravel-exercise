@@ -43,7 +43,7 @@ class User extends Authenticatable
 
     public function cars(){
         // one user has many trainings - pk
-        return $this->hasMany('App\Models\Car');
+        return $this->hasMany('App\Models\Car','owner_id');
         //Training::class
     }
 }

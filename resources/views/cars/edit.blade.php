@@ -18,10 +18,10 @@
                             <label for="">Colour</label>
                             <textarea name="colour" class="form-control" id=""> {{ $car->colour }}</textarea>
                         </div>
-                        {{-- <div class="form-group">
-                            <label for="">Owner</label>
-                            <input type="text" name="owner" class="form-control" value="{{ $car->owner }}">
-                        </div> --}}
+                        <div class="form-group">
+                            <label for="">Price</label>
+                            <input type="text" name="price" class="form-control" value="{{ $car->price }}">
+                        </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Update My Car</button>
                         </div>

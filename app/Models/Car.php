@@ -9,7 +9,8 @@ class Car extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'colour', 'owner'];
+    protected $fillable = ['name', 'colour', 'owner','price'];
+
     // one training belongs to a user -FK
     public function user(){
         return $this->belongsTo('App\Models\User');

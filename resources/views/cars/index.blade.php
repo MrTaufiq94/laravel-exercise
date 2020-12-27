@@ -4,8 +4,26 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+
+            @if (session()->has('alert'))
+                <div class="alert {{ session()->get('alert-type') }}">
+                    {{ session()->get('alert') }}
+                </div>
+            @endif
+
             <div class="card">
-                <div class="card-header">{{ __('Car List') }}</div>
+                <div class="card-header">{{ __('Car List') }}
+                    <div class="float-right">
+                        <form action="" method="get">
+                            <div class="input-group">
+                                <input type="text" name="keyword" class="form-control"/>
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
                 <div class="card-body">
                     <table class="table table-hover table-responsive">
@@ -40,7 +58,12 @@
                         
                     </table>
                     {{-- <div style="text-align: center;"> --}}
-                        {{ $cars->links() }}
+                        {{-- {{ $cars->links() }} --}}
+                        {{ $cars
+                            ->appends([
+                                'keyword' => request()->get('keyword')
+                            ])
+                            ->links() }}
                     {{-- </div> --}}
                 </div>
             </div>
