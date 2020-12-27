@@ -24,7 +24,18 @@ class StoreCarRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'colour' => 'required',
+            //'attachment' => 'required|mimes:jpg,pdf,png'
+        ];
+    }
+
+    public function messages(){
+        return [
+            'name.required' => 'Sila isi nama kereta',
+            'colour.required' => 'Sila isi warna kereta',
+            // 'title.min' => 'Tak cukup panjang :min',
+            // 'description.required' => 'Sila isi deskripsi',
         ];
     }
 }
