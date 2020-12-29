@@ -9,7 +9,7 @@ class Car extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'colour', 'owner','price'];
+    protected $fillable = ['name', 'colour', 'owner','price','attachment'];
 
     // one training belongs to a user -FK
     public function user(){
